@@ -39,7 +39,7 @@ app.get("/info/health", function(req, res) {
   res.sendStatus(200);
 });
 
-/* ---------- Endpoints PRODUCTION ---------- */
+/* ---------- AWS DynamoDB Endpoints - Written by Oscar ---------- */
 
 app.post("/getMessages", function(req, res) {
   if (!jsonContentType(req, res)) {
@@ -194,7 +194,7 @@ app.post("/getPlayersBetweenDates", function(req, res) {
   });
 });
 
-/* ---------- BigQuery Endpoints ---------- */
+/* ---------- BigQuery Endpoints -  Written by Oscar  ---------- */
 
 app.post("/getTotalWager", function(req, res) {
   async function query() {
@@ -263,7 +263,9 @@ app.post("/getBetCount", function(req, res) {
   }
   query();
 });
-/* ---------- Player Profile BigQuery Endpoints ---------- */
+
+/* ---------- Player Profile BigQuery Endpoints - Written by Oscar  ---------- */
+
 app.post("/getSignUpDate", function(req, res) {
   async function query() {
     const sqlQuery = `SELECT timestamp user_id
